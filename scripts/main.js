@@ -48,11 +48,13 @@ $(document).on('click', '.call-popup-dropdown__item-wrapper', function () {
     input = parent.find('input'),
     newImg = item.attr('src'),
     newCode = item.data('code'),
+    newMask = item.data('mask'),
     oldImg = current.attr('src'),
-    oldCode = current.data('code');
+    oldCode = current.data('code'),
+    oldMask = current.data('mask');
 
-  item.attr('src', oldImg).data('code', oldCode);
-  current.attr('src', newImg).data('code', newCode);
+  item.attr('src', oldImg).data('code', oldCode).data('mask', oldMask);
+  current.attr('src', newImg).data('code', newCode).data('mask', newMask);
   input.val(newCode);
 
   parent.callPopupDropdownToggle(true);
