@@ -1,0 +1,46 @@
+include mixins
+
+doctype html
+html(lang='ru')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimal-ui')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    title Ломбард Перспектива | Обратный звонок
+    // Оригинальные стили и скрипты с сайта
+    link(href='http://lombard-perspectiva.ru/themes/frontend/assets/css/custom.min.css?v=1544612661' rel='stylesheet')
+    link(href='http://lombard-perspectiva.ru/themes/frontend/assets/css/style.min.css?v=1568029013' rel='stylesheet')
+    link(href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap&subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet")
+    script(src='http://lombard-perspectiva.ru/assets/a1f4c1c3/jquery.min.js?v=1463765083')
+    // Оригинальные стили и скрипты с сайта
+    // Стили и скрипты для попапа
+    link(href='styles/style.css' rel='stylesheet')
+    script(src='scripts/libs/jquery.inputmask.min.js')
+    // Стили и скрипты для попапа
+
+  body(style="background-color: rgba(79, 83, 96, .5);")
+    +b.call-popup
+      +e.SVG.close(width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg")
+        path(d="M2 2L20 20M20 2L2 20" stroke-width="3")
+
+      +e.P.title ОБРАТНЫЙ ЗВОНОК
+
+      +e.FORM.form(action="#" method="post")
+        +e.P.subtitle Как с вами связаться?
+        +call-popup-tabs.__tabs
+
+        +e.inputbox
+          +e.INPUT.input(type="text" name="phone" required).form-control
+          +e.P.country-code +7
+          +call-popup-dropdown.__dropdown
+
+        +e.LABEL.checkbox
+          input(type="checkbox" name="agree" value="agree" required)
+          span Я согласен с <a href="http://lombard-perspectiva.ru/article/politika-konfidentcialnosti/" target="_blank">политикой конфиденциальности</a>  и&nbsp;<a href="http://lombard-perspectiva.ru/upload/LP_terms.pdf" target="_blank">пользовательским соглашением</a>
+
+        +e.button-wrapper
+          +e.BUTTON.button(type="submit") Отправить
+
+    // Скрипты для попапа
+    script(src='scripts/main.js')
+    // Скрипты для попапа
