@@ -44,7 +44,7 @@ $(document).on('click', '.call-popup-dropdown__item-wrapper', function () {
     item = $(this).find('.call-popup-dropdown__item'),
     parent = $(this).closest('.call-popup-dropdown'),
     current = parent.find('.call-popup-dropdown__current'),
-    textBlock = parent.siblings('.call-popup__country-code'),
+    textBlock = parent.siblings('.popup__inner_callback-form__country-code'),
     input = parent.find('input'),
     newImg = item.attr('src'),
     newCode = item.data('code'),
@@ -66,8 +66,8 @@ $(document).on('click', '.call-popup-dropdown__item-wrapper', function () {
 $.fn.callPopupSetMask = function () {
   var
     item = this,
-    popup = item.closest('.call-popup'),
-    input = popup.find('.call-popup__input'),
+    popup = item.closest('.popup'),
+    input = popup.find('.popup__inner_callback-form__inputbox input'),
     mask = this.data('mask');
 
   input.attr('placeholder', mask.replace(/\9/g, '_'));

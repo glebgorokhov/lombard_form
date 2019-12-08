@@ -46,16 +46,19 @@ html(lang='ru')
     .callback-form
       form(id="w22" class="callback-form popup popup--callback text-center" action="/" method="post" data-url="/site/ajax_callback_handler/" style="display: block;")
         input(type="hidden" name="_csrf" value="aWZpMGJ1eVkaNwtYVTtKA1xQMWonNC83MQIIHVs.OG0ECgN5NyQ9Fg==")
-        div(class="popup__inner")
+        div(class="popup__inner popup__inner_callback-form")
           button(class="popup__close" type="button")
           div(class="title") ОБРАТНЫЙ ЗВОНОК
+          .popup__inner_callback-form__subtitle Как с вами связаться?
+          +call-popup-tabs
           div(class="js-formList")
             div(class="js-feedbackSuccess")
-            div(class="form-group field-feedback-user_name required")
-              input(type="text" id="feedback-user_name" class="form-control" name="Feedback[user_name]" maxlength="255" placeholder="Имя")
             div(class="form-group field-feedback-user_email required")
               input(type="text" id="feedback-user_email" class="js-spam-email" name="Feedback[user_email]" placeholder="E-mail")
-            input(type="tel" id="w23" class="form-control" name="Feedback[telephone]" maxlength="18" placeholder="Телефон" data-plugin-inputmask="inputmask_a55dd1dc")
+            .popup__inner_callback-form__inputbox
+              input(type="tel" id="w23" class="form-control" name="Feedback[telephone]" maxlength="18" placeholder="Телефон" data-plugin-inputmask="inputmask_a55dd1dc")
+              .popup__inner_callback-form__country-code +7
+              +call-popup-dropdown
             div(class="form-group field-feedback-agree required")
               input(type="hidden" name="Feedback[agree]" value="0")
               input(type="checkbox" id="feedback-agree" name="Feedback[agree]" value="1")

@@ -22,7 +22,6 @@ $bpSmall: 400px;
   position: relative;
   text-align: left;
   max-width: calc(100% - 20px);
-  margin: auto;
 
   @media (max-width: $bp) {
     padding: 50px 20px 24px;
@@ -291,5 +290,133 @@ $bpSmall: 400px;
     @media (max-width: $bpSmall) {
       display: none;
     }
+  }
+}
+
+.popup__inner.popup__inner_callback-form {
+  box-sizing: border-box;
+  width: 510px;
+  padding: 56px 40px 32px;
+  color: $color-basic;
+  text-align: left;
+  max-width: calc(100% - 20px);
+
+  @media (max-width: $bp) {
+    padding: 50px 20px 24px;
+  }
+
+  .title {
+    font-size: 30px;
+    line-height: 40px;
+    letter-spacing: 0.3em;
+    text-align: left;
+
+    @media (max-width: $bp) {
+      font-size: 24px;
+      line-height: 30px;
+    }
+  }
+
+  .call-popup-tabs {
+    margin-top: 20px;
+  }
+
+  .popup__inner_callback-form__subtitle {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 20px;
+    margin: 32px 0 0;
+  }
+
+  .js-formList {
+    margin-top: 24px;
+  }
+
+  .form-group {
+    margin: 0;
+
+    input {
+      margin: 0;
+    }
+  }
+
+  .popup__inner_callback-form__inputbox {
+    margin: 0;
+    position: relative;
+
+    input {
+      margin: 0;
+      padding-left: 105px !important;
+      font-size: 15px !important;
+      line-height: 20px !important;
+      font-style: normal !important;
+      text-align: left;
+
+      &::placeholder {
+        font-style: normal !important;
+        color: $color-grey-5 !important;
+      }
+    }
+  }
+
+  .field-feedback-agree {
+    margin-top: 16px;
+    display: flex;
+    max-width: 320px;
+
+    #feedback-agree {
+      float: none;
+      flex-shrink: 0;
+      width: 16px;
+      margin-right: 8px;
+      height: 16px;
+      margin-top: 4px;
+    }
+
+    label[for=feedback-agree] {
+      font-size: 13px;
+      line-height: 17px;
+      color: $color-light;
+      font-weight: 400;
+      flex: 1;
+      margin: 0;
+
+      a {
+        transition: color $ease-main;
+        color: inherit;
+        text-decoration: underline;
+
+        &:hover {
+          color: $color-main;
+        }
+      }
+    }
+  }
+
+  .btn {
+    margin-top: 25px;
+  }
+
+  .call-popup-dropdown {
+    position: absolute;
+    height: 16px;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+  .popup__inner_callback-form__country-code {
+    font-size: 15px;
+    line-height: 20px;
+    color: $color-grey-3;
+    height: 20px;
+    left: 69px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+    width: 32px;
+    text-align: right;
   }
 }
