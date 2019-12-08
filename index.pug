@@ -19,30 +19,7 @@ html(lang='ru')
     script(src='scripts/libs/jquery.inputmask.min.js')
     // Стили и скрипты для попапа
 
-  body(style="background-color: rgba(79, 83, 96, .5);")
-    +b.call-popup
-      +e.SVG.close(width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg")
-        path(d="M2 2L20 20M20 2L2 20" stroke-width="3")
-
-      +e.P.title ОБРАТНЫЙ ЗВОНОК
-
-      +e.FORM.form(action="#" method="post")
-        +e.P.subtitle Как с вами связаться?
-        +call-popup-tabs.__tabs
-
-        +e.inputbox
-          +e.INPUT.input(type="text" name="phone" required).form-control
-          +e.P.country-code +7
-          +call-popup-dropdown.__dropdown
-
-        +e.LABEL.checkbox
-          input(type="checkbox" name="agree" value="agree" required)
-          span Я согласен с <a href="http://lombard-perspectiva.ru/article/politika-konfidentcialnosti/" target="_blank">политикой конфиденциальности</a>  и&nbsp;<a href="http://lombard-perspectiva.ru/upload/LP_terms.pdf" target="_blank">пользовательским соглашением</a>
-
-        +e.button-wrapper
-          +e.BUTTON.button(type="submit") Отправить
-
-    // Old Popup
+  body
     .callback-form
       form(id="w22" class="callback-form popup popup--callback text-center" action="/" method="post" data-url="/site/ajax_callback_handler/" style="display: block;")
         input(type="hidden" name="_csrf" value="aWZpMGJ1eVkaNwtYVTtKA1xQMWonNC83MQIIHVs.OG0ECgN5NyQ9Fg==")
