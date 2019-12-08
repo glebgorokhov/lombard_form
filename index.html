@@ -10,6 +10,10 @@
     <title>Ломбард Перспектива | Обратный звонок</title>
     <!-- Оригинальные стили и скрипты с сайта-->
     <link
+      href="http://lombard-perspectiva.ru/themes/frontend/assets/css/lib/lightbox.min.css?v=1550053729"
+      rel="stylesheet"
+    />
+    <link
       href="http://lombard-perspectiva.ru/themes/frontend/assets/css/custom.min.css?v=1544612661"
       rel="stylesheet"
     />
@@ -213,6 +217,110 @@
         >
         <div class="call-popup__button-wrapper">
           <button class="call-popup__button" type="submit">Отправить</button>
+        </div>
+      </form>
+    </div>
+    <!-- Old Popup-->
+    <div class="callback-form">
+      <form
+        class="callback-form popup popup--callback text-center"
+        id="w22"
+        action="/"
+        method="post"
+        data-url="/site/ajax_callback_handler/"
+        style="display: block;"
+      >
+        <input
+          type="hidden"
+          name="_csrf"
+          value="aWZpMGJ1eVkaNwtYVTtKA1xQMWonNC83MQIIHVs.OG0ECgN5NyQ9Fg=="
+        />
+        <div class="popup__inner">
+          <button class="popup__close" type="button"></button>
+          <div class="title">ОБРАТНЫЙ ЗВОНОК</div>
+          <div class="js-formList">
+            <div class="js-feedbackSuccess"></div>
+            <div class="form-group field-feedback-user_name required">
+              <input
+                class="form-control"
+                type="text"
+                id="feedback-user_name"
+                name="Feedback[user_name]"
+                maxlength="255"
+                placeholder="Имя"
+              />
+            </div>
+            <div class="form-group field-feedback-user_email required">
+              <input
+                class="js-spam-email"
+                type="text"
+                id="feedback-user_email"
+                name="Feedback[user_email]"
+                placeholder="E-mail"
+              />
+            </div>
+            <input
+              class="form-control"
+              type="tel"
+              id="w23"
+              name="Feedback[telephone]"
+              maxlength="18"
+              placeholder="Телефон"
+              data-plugin-inputmask="inputmask_a55dd1dc"
+            />
+            <div class="form-group field-feedback-agree required">
+              <input type="hidden" name="Feedback[agree]" value="0" /><input
+                type="checkbox"
+                id="feedback-agree"
+                name="Feedback[agree]"
+                value="1"
+              /><label class="control-label" for="feedback-agree"
+                >Я согласен
+                <a
+                  href="/article/politika-konfidentcialnosti/"
+                  target="_blank"
+                  style="text-decoration:underline"
+                  >с политикой конфиденциальности</a
+                >
+                и
+                <a
+                  href="/upload/LP_terms.pdf"
+                  target="_blank"
+                  style="text-decoration:underline"
+                  >пользовательским соглашением</a
+                ></label
+              >
+              <div class="help-block"></div>
+            </div>
+            <div class="form-group field-feedback-phone required">
+              <input
+                class="js-spam-phone"
+                type="text"
+                id="feedback-phone"
+                name="Feedback[phone]"
+                placeholder="Телефон"
+              />
+            </div>
+            <div class="form-group field-feedback-feedback_type">
+              <label class="control-label" for="feedback-feedback_type"></label
+              ><input
+                class="form-control"
+                type="hidden"
+                id="feedback-feedback_type"
+                name="Feedback[feedback_type]"
+                value="1"
+                maxlength="1"
+              />
+              <div class="help-block"></div>
+            </div>
+            <button
+              class="js-clear-online-spam-form-btn js-send-feedback-form-btn btn btn--outline popup__btn"
+              type="button"
+              onclick="ga('send', 'event', 'button', 'click', 'callbackclick '); yaCounter32655285.reachGoal('CALLBACKCLICK'); return true;"
+            >
+              Отправить
+            </button>
+          </div>
         </div>
       </form>
     </div>

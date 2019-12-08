@@ -8,6 +8,7 @@ html(lang='ru')
     meta(http-equiv='X-UA-Compatible' content='IE=edge')
     title Ломбард Перспектива | Обратный звонок
     // Оригинальные стили и скрипты с сайта
+    link(href="http://lombard-perspectiva.ru/themes/frontend/assets/css/lib/lightbox.min.css?v=1550053729" rel="stylesheet")
     link(href='http://lombard-perspectiva.ru/themes/frontend/assets/css/custom.min.css?v=1544612661' rel='stylesheet')
     link(href='http://lombard-perspectiva.ru/themes/frontend/assets/css/style.min.css?v=1568029013' rel='stylesheet')
     link(href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap&subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet")
@@ -40,6 +41,33 @@ html(lang='ru')
 
         +e.button-wrapper
           +e.BUTTON.button(type="submit") Отправить
+
+    // Old Popup
+    .callback-form
+      form(id="w22" class="callback-form popup popup--callback text-center" action="/" method="post" data-url="/site/ajax_callback_handler/" style="display: block;")
+        input(type="hidden" name="_csrf" value="aWZpMGJ1eVkaNwtYVTtKA1xQMWonNC83MQIIHVs.OG0ECgN5NyQ9Fg==")
+        div(class="popup__inner")
+          button(class="popup__close" type="button")
+          div(class="title") ОБРАТНЫЙ ЗВОНОК
+          div(class="js-formList")
+            div(class="js-feedbackSuccess")
+            div(class="form-group field-feedback-user_name required")
+              input(type="text" id="feedback-user_name" class="form-control" name="Feedback[user_name]" maxlength="255" placeholder="Имя")
+            div(class="form-group field-feedback-user_email required")
+              input(type="text" id="feedback-user_email" class="js-spam-email" name="Feedback[user_email]" placeholder="E-mail")
+            input(type="tel" id="w23" class="form-control" name="Feedback[telephone]" maxlength="18" placeholder="Телефон" data-plugin-inputmask="inputmask_a55dd1dc")
+            div(class="form-group field-feedback-agree required")
+              input(type="hidden" name="Feedback[agree]" value="0")
+              input(type="checkbox" id="feedback-agree" name="Feedback[agree]" value="1")
+              label(class="control-label" for="feedback-agree") Я согласен <a href="/article/politika-konfidentcialnosti/" target="_blank" style="text-decoration:underline">с политикой конфиденциальности</a>  и <a href="/upload/LP_terms.pdf" target="_blank" style="text-decoration:underline">пользовательским соглашением</a>
+              div(class="help-block")
+            div(class="form-group field-feedback-phone required")
+             input(type="text" id="feedback-phone" class="js-spam-phone" name="Feedback[phone]" placeholder="Телефон")
+            div(class="form-group field-feedback-feedback_type")
+             label(class="control-label" for="feedback-feedback_type")
+             input(type="hidden" id="feedback-feedback_type" class="form-control" name="Feedback[feedback_type]" value="1" maxlength="1")
+             div(class="help-block")
+            button(type="button" class="js-clear-online-spam-form-btn js-send-feedback-form-btn btn btn--outline popup__btn" onclick="ga('send', 'event', 'button', 'click', 'callbackclick '); yaCounter32655285.reachGoal('CALLBACKCLICK'); return true;") Отправить
 
     // Скрипты для попапа
     script(src='scripts/main.js')
