@@ -22,24 +22,22 @@ $.fn.callPopupDropdownToggle = function (hide) {
   }
 };
 
-$(document).on('click', '.call-popup-dropdown__button', function () {
+$('.call-popup-dropdown__button').on('click', function (e) {
   var
     parent = $(this).closest('.call-popup-dropdown'),
     isActive = parent.hasClass('is-active');
 
+  e.stopPropagation();
+
   isActive ? parent.callPopupDropdownToggle(true) : parent.callPopupDropdownToggle();
 });
 
-$(document).on('click', '.call-popup-dropdown', function (e) {
-  e.stopPropagation();
-});
-
-$(document).on('click', 'html', function () {
+$('html').on('click', function (e) {
   $(document).find('.call-popup-dropdown').callPopupDropdownToggle(true);
 });
 
 // Выбор кода региона
-$(document).on('click', '.call-popup-dropdown__item-wrapper', function () {
+$('.call-popup-dropdown__item-wrapper').on('click', function (e) {
   var
     item = $(this).find('.call-popup-dropdown__item'),
     parent = $(this).closest('.call-popup-dropdown'),
@@ -76,6 +74,6 @@ $.fn.callPopupSetMask = function () {
 
 $(document).find('.call-popup-dropdown__current').callPopupSetMask();
 
-$(document).on('click', '.call-popup-dropdown__item', function () {
+$('.call-popup-dropdown__item').on('click', function (e) {
   $(this).callPopupSetMask();
 });

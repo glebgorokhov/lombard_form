@@ -45,6 +45,7 @@
   font-size: 0;
   transition: background-color 0.2s ease;
   cursor: pointer;
+  text-align: left;
 }
 .call-popup-dropdown__item-wrapper:first-child {
   border-top: 1px solid #cccccc;
