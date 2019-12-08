@@ -187,6 +187,7 @@ $bpSmall: 400px;
     font-size: 15px;
     line-height: 20px;
     margin: 32px 0 0;
+    text-align: left;
   }
 
   .js-formList {
@@ -241,6 +242,7 @@ $bpSmall: 400px;
       font-weight: 400;
       flex: 1;
       margin: 0;
+      text-align: left;
 
       a {
         transition: color $ease-main;

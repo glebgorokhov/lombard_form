@@ -152,6 +152,7 @@
   font-size: 15px;
   line-height: 20px;
   margin: 32px 0 0;
+  text-align: left;
 }
 .popup__inner.popup__inner_callback-form .js-formList {
   margin-top: 24px;
@@ -204,6 +205,7 @@
   font-weight: 400;
   flex: 1;
   margin: 0;
+  text-align: left;
 }
 .popup__inner.popup__inner_callback-form
   .field-feedback-agree
