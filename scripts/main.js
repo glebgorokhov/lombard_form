@@ -1,8 +1,9 @@
+// Обратный звонок JS
 // ##############################
 // Открытие/закрытие списка стран
-$.fn.callPopupDropdownToggle = function (hide) {
+function callPopupDropdownToggle(el, hide) {
   var
-    parent = this,
+    parent = el,
     button = parent.find('.call-popup-dropdown__button'),
     list = parent.find('.call-popup-dropdown__list');
 
@@ -20,7 +21,7 @@ $.fn.callPopupDropdownToggle = function (hide) {
       list.addClass('is-active');
     });
   }
-};
+}
 
 $('.call-popup-dropdown__button').on('click', function (e) {
   var
@@ -29,11 +30,11 @@ $('.call-popup-dropdown__button').on('click', function (e) {
 
   e.stopPropagation();
 
-  isActive ? parent.callPopupDropdownToggle(true) : parent.callPopupDropdownToggle();
+  isActive ? callPopupDropdownToggle(parent, true) : callPopupDropdownToggle(parent);
 });
 
 $('html').on('click', function (e) {
-  $(document).find('.call-popup-dropdown').callPopupDropdownToggle(true);
+  callPopupDropdownToggle($(document).find('.call-popup-dropdown'), true);
 });
 
 // Выбор кода региона
@@ -55,25 +56,25 @@ $('.call-popup-dropdown__item-wrapper').on('click', function (e) {
   current.attr('src', newImg).data('code', newCode).data('mask', newMask);
   input.val(newCode);
 
-  parent.callPopupDropdownToggle(true);
+  callPopupDropdownToggle(parent, true);
   textBlock.text(newCode);
 });
 
 // ##############################
 // Маска поля ввода
-$.fn.callPopupSetMask = function () {
+function callPopupSetMask(el) {
   var
-    item = this,
+    item = el,
     popup = item.closest('.popup'),
     input = popup.find('.popup__inner_callback-form__inputbox input'),
-    mask = this.data('mask');
+    mask = item.data('mask');
 
   input.attr('placeholder', mask.replace(/\9/g, '_'));
   input.inputmask(mask);
-};
+}
 
-$(document).find('.call-popup-dropdown__current').callPopupSetMask();
+callPopupSetMask($(document).find('.call-popup-dropdown__current'));
 
 $('.call-popup-dropdown__item').on('click', function (e) {
-  $(this).callPopupSetMask();
+  callPopupSetMask($(this));
 });
